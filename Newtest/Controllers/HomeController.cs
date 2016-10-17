@@ -26,5 +26,11 @@ namespace Newtest.Controllers
 
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+
+            return View();
+        }
     }
 }
