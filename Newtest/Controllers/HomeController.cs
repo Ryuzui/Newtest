@@ -56,7 +56,6 @@ namespace Newtest.Controllers
                 "Go 1.7.2 版本发布了。",
                 "Git 项目推荐 | lyadmin 轻量级通用后台" };
             ViewBag.data = data;
-
             return View();
         }
 
