@@ -55,7 +55,9 @@ namespace Newtest.Controllers
                 "微软开源LightGBM：轻量级梯度Boosting框架",
                 "Go 1.7.2 版本发布了。",
                 "Git 项目推荐 | lyadmin 轻量级通用后台" };
-            ViewBag.data = data;
+            //ViewBag.data = data;
+            //Viewdata["data"]=data
+            ViewData.Model = data;
             return View();
         }
 
