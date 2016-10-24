@@ -63,8 +63,26 @@ namespace Newtest.Controllers
 
         }
 
- 
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add()
+        {
+            return View();
 
- 
+        }
+
+        /// <summary>
+        /// 保存新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Save(string title,string content)
+        {
+            ViewBag.Title = title;
+            ViewBag.Content = content;
+            return View();
+
+        }
     }
 }
