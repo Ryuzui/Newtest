@@ -49,7 +49,7 @@ namespace Newtest.Controllers
         /// 新闻列表
         /// </summary>
         /// <returns></returns>
-        public ActionResult List()
+        public ActionResult List(int page=7)
         {
             String[] data = new string[] { "在Linux开发.NET——拜拜了Win10",
                 "微软开源LightGBM：轻量级梯度Boosting框架",
@@ -58,8 +58,13 @@ namespace Newtest.Controllers
             //ViewBag.data = data;
             //Viewdata["data"]=data
             ViewData.Model = data;
+            ViewBag.Page = page;
             return View();
+
         }
 
+ 
+
+ 
     }
 }
