@@ -9,14 +9,18 @@ namespace Newtest.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(string Q)
         {
             var db = new BlogDatabase();
-
             db.Database.CreateIfNotExists();
+            //var lst = db.BlogArticles.OrderByDescending(o => o.Id).ToList();
+            //ViewBag.BlogArticles = lst;
 
-            var lst = db.BlogArticles.OrderByDescending(o => o.Id).ToList();
-            ViewBag.BlogArticles = lst;
+            var lst = db.BlogArticles.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(Q))
+                lst = lst.Where(o => o.Subject.Contains(Q));
+            ViewBag.BlogArticles = lst.OrderByDescending(o => o.Id).ToList();
+            ViewBag.Q = Q;
 
             return View();
         }
@@ -45,7 +49,6 @@ namespace Newtest.Controllers
         {
             var db = new BlogDatabase();
             var article = db.BlogArticles.First(o => o.Id == id);
-
             ViewData.Model = article;
             return View();
         }

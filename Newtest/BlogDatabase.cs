@@ -11,7 +11,6 @@
         {
         }
 
-
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<BlogArticle> BlogArticles { get; set; }
 
