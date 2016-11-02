@@ -1,4 +1,4 @@
-﻿namespace News
+﻿namespace Newtest
 {
     using System;
     using System.Data.Entity;
