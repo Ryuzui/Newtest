@@ -3,6 +3,7 @@
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.ComponentModel.DataAnnotations;
 
     public class BlogDatabase : DbContext
     {
@@ -61,12 +62,14 @@
         /// <summary>
         /// 标题
         /// </summary>
+        [Required]
+        [StringLength(20, MinimumLength =3, ErrorMessage ="{0}的长度必须介于{2}到{1}")]
         public string Subject { get; set; }
 
         /// <summary>
         /// 文章内容
         /// </summary>
-
+        [Required]
         public string Body { get; set; }
 
         /// <summary>
