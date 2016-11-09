@@ -70,7 +70,7 @@ namespace Newtest.Controllers
         {
             var db = new BlogDatabase();
             var article = db.BlogArticles.First(o => o.Id == id);
-
+           
             article.Subject = subject;
             article.Body = body;
 
