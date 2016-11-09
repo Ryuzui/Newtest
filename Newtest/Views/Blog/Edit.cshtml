@@ -3,7 +3,7 @@
     ViewBag.Title = "Edit";
 }
 <h2>编辑</h2>
-@using (Html.BeginForm("ArticleSave", "Blog"))
+@using (Html.BeginForm("EditSave", "Blog"))
 {
     <input type="hidden" value="@Model.Id" name="Id" />
     <table class="table table-bordered">
