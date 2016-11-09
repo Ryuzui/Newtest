@@ -9,6 +9,9 @@ namespace Newtest.Controllers
     public class CookieController : Controller
     {
         // GET: Cookie
+        /// <summary>
+        /// Index
+        /// </summary>
         public ActionResult Index()
         {
             int count = 1;
@@ -26,6 +29,28 @@ namespace Newtest.Controllers
                 Response.Cookies.Add(newcookie);
             }
             ViewBag.count = count;
+            return View();
+        }
+        /// <summary>
+        /// 登陆
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Login()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 登陆验证
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PostLogin(string username,string password)
+        {
+            if( username == "admin"  && password == "admin")
+            {
+                var cookie = new HttpCookie("isauth", "true");
+                Response.Cookies.Add(cookie);
+                return RedirectToAction("AddArticle", "Blog");
+            }
             return View();
         }
     }
